@@ -1,0 +1,150 @@
+
+QWidget {
+	/**/
+	font-family: "Segoe UI"
+	/**/
+	/**
+	font-family: "07LogoTypeGothic7"
+	/**/
+}
+
+/**/
+QAbstractItemView {
+  alternate-background-color: #F4F4F4;
+}
+/**/
+QMainWindow {
+	border-top: 2px solid;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-bottom: 1px solid;
+	border-color: #B9B9B9;
+	/*border-image:url(:/res/image/MenuBar_Background.png) 0 0 0 0 stretch stretch;*/
+	
+	/*background-image:url(:/res/image/Blackboard_tile.png);*/
+	/*
+	border-color: #B0B3B7;
+	*/
+	
+	background:qlineargradient(x1:0, y1:0, x2:0, y2:1,stop:0 #EEEDED, stop:1.0 #D6D6D5);
+	
+}
+
+QTreeWidget::item,
+QListView::item {
+	height: 20px;
+}
+
+QListView::item:!selected:hover,
+QTreeView::item:!selected:hover {
+	background-color: #8BA7C9;
+}
+QComboBox {
+	padding-left: 8px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+/*
+#treeWidget_fileList::item:!selected:hover {
+  outline: 0;
+  background-color: #8BA7C9;
+}
+*/
+#viewL_command,
+#treeWidget_folders {
+	background-color: #E4E8ED;
+}
+
+#treeWidget_fileList::item,
+#treeWidget_folders::item {
+	height: 20px;
+}
+
+/*
+QPushButton::hover {
+	background-color: #444;
+}
+/**/
+
+QTabWidget{
+	background-color: #222;
+}
+/*
+QTabBar::tab {
+/*background-color: #444;
+/*min-width:8ex; padding:2px;
+/*border:2px solid #C4C4C3; border-bottom-color:#C2C7CB;
+border-top-left-radius: 8px; border-top-right-radius: 8px;
+}
+
+QTabBar::tab:selected {
+background-color: #888;
+border:1px solid #222;
+min-width: 16ex;
+margin: 0px;
+padding-left:4px;
+icon-align: center;
+		text-align: center;
+border-top-left-radius: 8px; border-top-right-radius: 8px;
+}
+*/
+
+#button_ProjectOpen{
+	margin-left: 4px;
+}
+
+
+#label_output {
+	color: #000;
+}
+
+#linkRegistry {
+	color: #99CCFF;
+}
+
+#label_desc {
+	background-color: #555;
+	margin-top:4px;
+	padding:8px;
+}
+
+
+#titile_close_button {
+	width: 30px;
+}
+#titile_close_button::hover {
+	background-color: #E81123;
+}
+
+#toolBar,
+#frame {
+	background:qlineargradient(x1:0, y1:0, x2:0, y2:1,stop:0 #FCFCFC, stop:1.0 #E7E7E7);
+	/*border-top: 1px solid gray;*/
+	border-bottom: 1px solid #B9B9B9;
+	border-right: 1px solid #B9B9B9;
+	border-left: 1px solid #B9B9B9;
+	max-height: 30px;
+	padding-left: 4px;
+}
+
+#statusBar {
+	background:qlineargradient(x1:0, y1:0, x2:0, y2:1,stop:0 #FCFCFC, stop:1.0 #E7E7E7);
+	border-top: 1px solid gray;
+	max-height: 24px;
+	padding-left: 4px;
+}
+
+
+#button_files,
+#button_about,
+#button_settings {
+	margin-left: 4px;
+	padding-right: 4px;
+	padding-left: 2px;
+	max-height: 20px;
+}
+
+
+

@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Config.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NkfHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\UICommandBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\UIConfigIgnoreFolder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\UIConfigSuffixEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\UIMainCaption.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\UIMainWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\UIPanelConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\UIPanelInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\UIPanelMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\App.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\Enums.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigPage.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Item_File.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nkf32.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\ui\UICommandBar.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\UIConfigIgnoreFolder.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\UIConfigSuffixEdit.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\UIMainCaption.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\UIMainWindow.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\UIPanelConfig.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\UIPanelInfo.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\UIPanelMain.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <ClCompile Include="src\pch.h.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <CustomBuild Include="src\pch.h">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\ui\UICommandBar.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\ui\UIConfigIgnoreFolder.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\ui\UIConfigSuffixEdit.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\ui\UIMainCaption.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\ui\UIMainWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\ui\UIPanelConfig.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\ui\UIPanelInfo.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\ui\UIPanelMain.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\image\37146228.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="src\icon\f_f_health_50_s64_f_health_50_1bg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="src\res.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include=".\nkf-gui_resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\Config.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\NkfHelper.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

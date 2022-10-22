@@ -1,0 +1,12 @@
+/.svn
+/.vs
+/package
+/main/.vs
+/main/debug
+/main/release
+/main/ui_*.h
+/main/Makefile*
+/main/nkf-gui.pro.user
+/main/nkf-gui.vcxproj.user
+/nkf-gui.exe
+/nkf-gui.json
