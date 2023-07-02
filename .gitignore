@@ -10,3 +10,6 @@
 /main/nkf-gui.vcxproj.user
 /nkf-gui.exe
 /nkf-gui.json
+/main/.qtc_clangd
+/rev.bat
+/main/src/dummy

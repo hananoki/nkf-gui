@@ -34,42 +34,46 @@ RC_ICONS = src/icon/f_f_health_50_s16_f_health_50_1bg.ico
 SOURCES += \
     src/App.cpp \
     src/Config.cpp \
+    src/ItemFile.cpp \
+    src/ItemFolder.cpp \
     src/NkfHelper.cpp \
+    src/ContextMenu.cpp \
+    src/utils.cpp \
+    src/ActionFile.cpp \
+    src/ActionFolder.cpp \
     src/ui/UICommandBar.cpp \
     src/ui/UIConfigIgnoreFolder.cpp \
     src/ui/UIConfigSuffixEdit.cpp \
-    src/ui/UIMainWindow.cpp \
-    src/ui/UIMainCaption.cpp \
-    src/ui/UIPanelConfig.cpp \
-    src/ui/UIPanelInfo.cpp \
-    src/ui/UIPanelMain.cpp
+    src/ui/UIDialogConfig.cpp \
+    src/ui/UIDialogInfo.cpp \
+    src/ui/UIMainWindow.cpp
 
 HEADERS += \
+    src/ItemFile.h \
+    src/ItemFolder.h \
+    src/revinfo.inc \
     src/App.h \
     src/Config.h \
-    src/Enums.h \
     src/NkfHelper.h \
+    src/ContextMenu.h \
+    src/utils.h \
+    src/ActionFile.h \
+    src/ActionFolder.h \
     src/nkf32.h \
-    src/Item_File.h \
-    src/IConfigPage.h \
     src/ui/UICommandBar.h \
     src/ui/UIConfigIgnoreFolder.h \
     src/ui/UIConfigSuffixEdit.h \
-    src/ui/UIMainWindow.h \
-    src/ui/UIMainCaption.h \
-    src/ui/UIPanelConfig.h \
-    src/ui/UIPanelInfo.h \
-    src/ui/UIPanelMain.h
+    src/ui/UIDialogConfig.h \
+    src/ui/UIDialogInfo.h \
+    src/ui/UIMainWindow.h
 
 FORMS += \
     src/ui/UICommandBar.ui \
     src/ui/UIConfigIgnoreFolder.ui \
     src/ui/UIConfigSuffixEdit.ui \
-    src/ui/UIMainWindow.ui \
-    src/ui/UIMainCaption.ui \
-    src/ui/UIPanelConfig.ui \
-    src/ui/UIPanelInfo.ui \
-    src/ui/UIPanelMain.ui
+    src/ui/UIDialogConfig.ui \
+    src/ui/UIDialogInfo.ui \
+    src/ui/UIMainWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

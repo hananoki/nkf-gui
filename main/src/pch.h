@@ -4,6 +4,7 @@
 #include <QApplication> // Qt includes
 #include <QDebug>
 #include <QMessageBox>
+#include <QClipboard>
 
 #include <QPushButton>
 #include <QToolButton>
@@ -54,10 +55,11 @@
 
 #include "Qtlib.h"
 
-#include "Enums.h"
+//#include "Enums.h"
 #include "Config.h"
 
 #include "UIStatusBar.h"
 
+#define ICON_EXPLORER icon::get( QString( "C:/Windows/explorer.exe" ) )
 
 #endif

@@ -1,14 +1,14 @@
 ﻿#pragma once
 
-#include <QWidget>
+#include <QDialog>
 
 //////////////////////////////////////////////////////////////////////////////////
-class UIConfigSuffixEdit : public QWidget {
+class UIDialogInfo : public QDialog {
 	Q_OBJECT
 
 public:
-	explicit UIConfigSuffixEdit( QWidget* parent = nullptr );
-	~UIConfigSuffixEdit();
+	explicit UIDialogInfo( QWidget* parent = nullptr );
+	~UIDialogInfo();
 
 private:
 	class Impl;

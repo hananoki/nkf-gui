@@ -3,9 +3,17 @@
 #include "nkf32.h"
 
 namespace nkf {
+	bool convertEUC( const QString& filePath ) {
+		return true;
+	}
+
+	bool convertSJIS( const QString& filePath ) {
+		return true;
+	}
+
 	bool convertUTF8( const QString& filePath ) {
 		// -g: 自動判別の結果を出力する。
-	// -t: 何もしない。
+		// -t: 何もしない。
 		char opt[] = "-w8";
 		SetNkfOption( opt );
 
@@ -28,7 +36,7 @@ namespace nkf {
 
 
 	ECharacterCode getCharacterCode( const QString& filePath ) {
-		char opt[] = "--guess -t";
+		char opt[] = "-g2 -t -d";
 		SetNkfOption( opt );
 
 		auto data = fs::readAll( filePath );
@@ -37,7 +45,9 @@ namespace nkf {
 		char buffer[ 64 ];
 		BOOL returnCode = NkfConvertSafe( buffer, 64, &ret, data.data(), data.size() );
 		//NkfFileConvert1( filePath.toStdString().c_str() );
-
+		wchar_t wc[255];
+		DWORD dw;
+		GetNkfGuessW(wc,255,&dw );
 		auto enc = (ECharacterCode) NkfGetKanjiCode();
 
 		// US-ASCII も ISO-2022-JP と判別される。ISO-2022-JP であれば ESC (0x1B) が含まれるので・・・

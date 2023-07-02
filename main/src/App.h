@@ -14,7 +14,6 @@ public:
 	App( int& argc, char** argv, int = ApplicationFlags );
 	virtual ~App();
 
-
 signals:
 
 public:

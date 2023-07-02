@@ -24,7 +24,7 @@ public:
 		listWidget->setAcceptDrops( true );
 		listWidget->installEventFilter( self );
 
-		button_m->setIcon( icon::FA::minus() );
+		//button_m->setIcon( icon::FA::minus() );
 
 		makeIgnoreList();
 
@@ -38,9 +38,9 @@ public:
 			config.ignorePaths.removeOne( item->text() );
 		} );
 
-		QObject::connect( &config, &Config::signal_changeIgnorePath, [&]() {
-			makeIgnoreList();
-		} );
+		//connect( &config, &Config::signal_changeIgnorePath, [&]() {
+		//	makeIgnoreList();
+		//} );
 	}
 
 

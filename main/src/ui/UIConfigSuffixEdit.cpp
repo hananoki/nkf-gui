@@ -36,8 +36,7 @@ public:
 		for( auto& f : config.suffixes ) {
 			listWidget->addItem( new Item( f ) );
 		}
-		button_p->setIcon( icon::FA::plus() );
-		button_m->setIcon( icon::FA::minus() );
+
 
 		$PushButton::clicked( button_p, [&]( bool ) {
 			auto t = lineEdit->text();

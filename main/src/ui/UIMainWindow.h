@@ -1,11 +1,11 @@
 ﻿#pragma once
 
-#include "HFramelessWindow.h"
+#include "QMainWindow.h"
 
+#define mainWindow (UIMainWindow::instance)
 
-#define qtWindow (UIMainWindow::instance)
-
-class UIMainWindow : public HFramelessWindow {
+//////////////////////////////////////////////////////////////////////////////////
+class UIMainWindow : public QMainWindow {
 	Q_OBJECT
 
 public:
@@ -20,13 +20,19 @@ public:
 	/////////////////////////////////////////
 	virtual void closeEvent( QCloseEvent* event ) override;
 
-	/////////////////////////////////////////
-	static void changePanel( EPanelMode panelMode );
+	/// @brief  イベントフィルター
+	bool eventFilter( QObject* obj, QEvent* event );
+
+	template<class T>
+	void showDialog() {
+		$::showDialog<T>( this );
+	}
 
 signals:
 	void signal_start();
 	void signal_closeWindow();
-	void signal_changePanel( EPanelMode panelMode );
+
+	void addTreeItem( QTreeWidgetItem* item );
 
 private:
 	class Impl;

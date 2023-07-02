@@ -40,9 +40,7 @@ public:
 	/////////////////////////////////////////
 	int run() {
 		//QtFusionStyle::set();
-		qApp->setStyle( QStyleFactory::create( "Fusion" ) );
-
-		icon::initQtAwesome( 0.9f, "#000" );
+		//qApp->setStyle( QStyleFactory::create( "Fusion" ) );
 
 		QTranslator t;
 		loadCurrentLangTranslator( t );
@@ -59,24 +57,20 @@ public:
 
 		UIMainWindow w;
 
-		QKeySequence keys_refresh( QKeySequence::Refresh );
-		QAction* shortcutF5 = new QAction( &w );
-		shortcutF5->setShortcut( keys_refresh );
-		w.addAction( shortcutF5 );
-		connect( shortcutF5, &QAction::triggered, []() {
-			qApp->setStyleSheet( fs::readAllText( "style.qss" ) );
+#if _DEBUG
+		$Action::setShortcut( &w, QKeySequence::Refresh, []() {
+			qApp->setStyleSheet( fs::readAllText( "main/src/style.qss" ) );
 			UIStatusBar::info( tr( u8"スタイルシートを更新" ) );
 		} );
-
+#endif
 		w.start();
 
-		qApp->setStyleSheet( fs::readAllText( "style.qss" ) );
+		qApp->setStyleSheet( fs::readAllText( ":/res/style.qss" ) );
 
 		w.show();
 
 		return self->exec();
 	}
-
 
 };
 
@@ -84,7 +78,6 @@ public:
 App* App::instance;
 
 //////////////////////////////////////////////////////////////////////////////////
-
 
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -107,12 +100,12 @@ void logHandler( QtMsgType type, const QMessageLogContext& context, const QStrin
 	const auto& message = qFormatLogMessage( type, context, msg );
 	QTextStream cerr( stderr );
 	cerr << message << endl;
-	QFile file( "App.log" );
-	if( !file.open( QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text ) ) {
-		cerr << "Cannot open log file:" << file.fileName();
-		return;
-	}
-	QTextStream( &file ) << message << endl;
+	//QFile file( "App.log" );
+	//if( !file.open( QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text ) ) {
+	//	cerr << "Cannot open log file:" << file.fileName();
+	//	return;
+	//}
+	//QTextStream( &file ) << message << endl;
 }
 
 int main( int argc, char* argv[] ) {

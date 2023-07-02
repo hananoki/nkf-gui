@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
-    <number>4</number>
+    <number>2</number>
    </property>
    <property name="leftMargin">
     <number>0</number>
@@ -36,13 +36,15 @@
        <property name="placeholderText">
         <string>拡張子を入力して追加します</string>
        </property>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_message">
        <property name="font">
         <font>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -60,12 +62,20 @@
        <property name="text">
         <string/>
        </property>
+       <property name="icon">
+        <iconset resource="../res.qrc">
+         <normaloff>:/res/icon/plus.png</normaloff>:/res/icon/plus.png</iconset>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="HFlatPushButton" name="button_m">
        <property name="text">
         <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../res.qrc">
+         <normaloff>:/res/icon/minus.png</normaloff>:/res/icon/minus.png</iconset>
        </property>
       </widget>
      </item>
@@ -75,6 +85,12 @@
     <widget class="QListWidget" name="listWidget">
      <property name="autoScroll">
       <bool>true</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::ExtendedSelection</enum>
      </property>
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
@@ -86,7 +102,7 @@
       <enum>QListView::TopToBottom</enum>
      </property>
      <property name="isWrapping" stdset="0">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="resizeMode">
       <enum>QListView::Adjust</enum>
@@ -106,6 +122,9 @@
      <property name="selectionRectVisible">
       <bool>false</bool>
      </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
   </layout>
@@ -117,6 +136,8 @@
    <header>HFlatPushButton.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
  <connections/>
 </ui>

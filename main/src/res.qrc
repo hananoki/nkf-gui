@@ -1,5 +1,11 @@
 <RCC>
     <qresource prefix="/res">
         <file>icon/f_f_health_50_s64_f_health_50_1bg.png</file>
+        <file>icon/info2.png</file>
+        <file>icon/settings.png</file>
+        <file>icon/minus.png</file>
+        <file>icon/plus.png</file>
+        <file>markdown/about.md</file>
+        <file>style.qss</file>
     </qresource>
 </RCC>

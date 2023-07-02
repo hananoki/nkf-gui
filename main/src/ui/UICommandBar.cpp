@@ -3,9 +3,6 @@
 
 #include "UIMainWindow.h"
 #include <magic_enum.hpp>
-#include "NkfHelper.h"
-#include "Item_File.h"
-#include "UIPanelMain.h"
 
 
 
@@ -19,68 +16,49 @@ public:
 	Impl( UICommandBar* _self ) :
 		self( _self ) {
 
-		//UIFileList::instance = self;
 		setupUi( self );
-		//comboBox->setProperty( "text-align", "center" );
-		auto lst = $enums::names<nkf::ECharacterCode>();
-		$ComboBox::addItems( comboBox, lst );
 
-		comboBox->setCurrentIndex( lst.indexOf( config.characterCode ) );
+		$ComboBox::addItems( comboBox, $enums::names<nkf::ECharacterCode>() );
 
-		checkBox->setChecked( config.ignoreFile );
+		comboBox->bind( &config.characterCode );
+
+		checkBox->bind( &config.ignoreFlag );
+
+		checkBox_2->bind( &config.ignoreAsciiFlag );
 	}
 
 
 	/////////////////////////////////////////
 	void setup() {
 
-		$ComboBox::currentIndexChanged( comboBox, [&]( int index ) {
-			config.characterCode = comboBox->currentText();
-			UIPanelMain::traverseItems( [&]( Item_File* item ) {
-				item->updateCodeState();
-			} );
-		} );
-
 		// すべて選択
-		$PushButton::clicked( button_all, [&]( bool ) {
-			UIPanelMain::traverseItems( [&]( Item_File* item ) {
-				if( item->isHidden() )return;
-				item->setCheckState( 0, Qt::Checked );
-			} );
+		$PushButton::click( button_all, [&]() {
+			emit self->selectFileFlag( true );
 		} );
 
-		// すべて選択
-		$PushButton::clicked( button_uncheck, [&]( bool ) {
-			UIPanelMain::traverseItems( [&]( Item_File* item ) {
-				if( item->isHidden() )return;
-				item->setCheckState( 0, Qt::Unchecked );
-			} );
+		// すべて解除
+		$PushButton::click( button_uncheck, [&]() {
+			emit self->selectFileFlag( false );
 		} );
 
-		$PushButton::clicked( button_convert, [&]( bool ) {
-			int count = 0;
-			UIPanelMain::traverseItems( [&]( Item_File* item ) {
-				if( item->checkState( 0 ) != Qt::Checked )return;
-
-				nkf::convertUTF8( item->fullPath );
-				item->updateCodeState( true );
-				count++;
-			} );
-
-			if( 0 < count ) {
-				UIStatusBar::info( $$( tr( u8"%1ファイル 変換しました" ).arg( count ) ) );
-			}
-			else {
-				UIStatusBar::info( $$( tr( u8"変換するファイルはありません" ) ) );
-			}
+		// 変換
+		$PushButton::click( button_convert, [&]() {
+			emit self->buttonConvert();
 		} );
 
-		$CheckBox::stateChanged( checkBox, [&]( int state ) {
-			config.ignoreFile = state;
-			UIPanelMain::traverseItems( [&]( Item_File* item ) {
-				item->updateCodeState();
-			} );
+
+		connect( checkBox, &HCheckBox::stateChanged, [&]() {
+			emit self->viewStateChange();
 		} );
+
+		connect( checkBox_2, &HCheckBox::stateChanged, [&]() {
+			emit self->viewStateChange();
+		} );
+
+		connect( comboBox, &HComboBox::currentTextChanged, [&]() {
+			emit self->viewStateChange();
+		} );
+
 	}
 };
 
@@ -91,10 +69,12 @@ UICommandBar::UICommandBar( QWidget* parent ) :
 	QWidget( parent ),
 	impl( new Impl( this ) ) {
 
-	connect( qtWindow, &UIMainWindow::signal_start, [&]() {
-		impl->setup();
-	} );
+	connect(
+		mainWindow,
+		&UIMainWindow::signal_start,
+		std::bind( &Impl::setup, impl.get() ) );
 }
+
 
 /////////////////////////////////////////
 UICommandBar::~UICommandBar() {

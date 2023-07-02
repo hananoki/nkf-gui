@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>486</width>
+    <width>803</width>
     <height>31</height>
    </rect>
   </property>
@@ -33,13 +33,13 @@
     <number>0</number>
    </property>
    <property name="topMargin">
-    <number>0</number>
+    <number>2</number>
    </property>
    <property name="rightMargin">
     <number>0</number>
    </property>
    <property name="bottomMargin">
-    <number>0</number>
+    <number>2</number>
    </property>
    <item>
     <widget class="QPushButton" name="button_all">
@@ -69,6 +69,34 @@
     </spacer>
    </item>
    <item>
+    <widget class="HCheckBox" name="checkBox_2">
+     <property name="text">
+      <string>ASCIIを除外する</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="HCheckBox" name="checkBox">
+     <property name="text">
+      <string>不要なファイルを除外する</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QLabel" name="label">
      <property name="text">
       <string>文字コード</string>
@@ -76,16 +104,16 @@
     </widget>
    </item>
    <item>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="HComboBox" name="comboBox">
      <property name="layoutDirection">
       <enum>Qt::LeftToRight</enum>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="checkBox">
-     <property name="text">
-      <string>不要なファイルを除外する</string>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
     </widget>
    </item>
@@ -98,6 +126,18 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>HCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>HCheckBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>HComboBox</class>
+   <extends>QComboBox</extends>
+   <header>HComboBox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -1,0 +1,58 @@
+
+QWidget {
+	font-family: "Segoe UI"
+}
+
+
+QAbstractItemView {
+  alternate-background-color: #F4F4F4;
+}
+
+QMainWindow {
+	border-top: 0px solid;
+	border-left: 0px solid;
+	border-right: 0px solid;
+	border-bottom: 0px solid;
+	background:qlineargradient(x1:0, y1:0, x2:0, y2:1,stop:0 #FFF, stop:1.0 #D6D6D5);
+}
+
+QTreeWidget::item,
+QListView::item {
+	height: 20px;
+}
+
+QListView::item:!selected:hover,
+QTreeView::item:!selected:hover {
+	background-color: #8BA7C9;
+}
+QComboBox {
+	padding-left: 8px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#toolBar {
+	padding-top: 0px;
+}
+
+/*
+#toolBar,
+#frame {
+	background:qlineargradient(x1:0, y1:0, x2:0, y2:1,stop:0 #FCFCFC, stop:1.0 #E7E7E7);
+	/*border-top: 1px solid gray;
+	border-bottom: 1px solid #B9B9B9;
+	border-right: 1px solid #B9B9B9;
+	border-left: 1px solid #B9B9B9;
+	max-height: 30px;
+	padding-left: 4px;
+}
+*/
+#statusBar {
+	background:qlineargradient(x1:0, y1:0, x2:0, y2:1,stop:0 #FCFCFC, stop:1.0 #E7E7E7);
+	border-top: 1px solid gray;
+	max-height: 24px;
+	padding-left: 4px;
+}
+
+

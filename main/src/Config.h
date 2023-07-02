@@ -1,10 +1,8 @@
 ﻿#pragma once
 
 #include <QMap>
-#include "Enums.h"
+#include "IConfigChanged.h"
 #include "NkfHelper.h"
-
-using TMap = QMap<QString, QString>;
 
 #define CONFIG_VALUE(type,name) type name;
 #define CONFIG_VALUE_INIT(type,name,ini) type name = ini;
@@ -12,15 +10,16 @@ using TMap = QMap<QString, QString>;
 #define CONFIG_VALUE_LIST \
 	CONFIG_VALUE( QPoint, pos ) \
 	CONFIG_VALUE( QSize, size ) \
-	CONFIG_VALUE( bool, ignoreFile ) \
-	CONFIG_VALUE( EConfigItem, lastEConfigItem ) \
+	CONFIG_VALUE( bool, ignoreFlag ) \
+	CONFIG_VALUE( bool, ignoreAsciiFlag ) \
+	CONFIG_VALUE( int, lastConfigRow ) \
 	CONFIG_VALUE( QStringList, ignorePaths ) \
 	CONFIG_VALUE( QString, characterCode ) \
 	CONFIG_VALUE( QString, fileTreeHeader ) \
 	CONFIG_VALUE( QStringList, suffixes ) \
 	CONFIG_VALUE( QStringList, lastInput )
 
-class Config :public QObject {
+class Config : public QObject, public IConfigChanged {
 	Q_OBJECT
 public:
 	CONFIG_VALUE_LIST
@@ -28,17 +27,20 @@ public:
 	static void save();
 	static void load();
 
-	QString suffixFilter();
-	bool hasSuffix( QString filePath );
+	virtual void changedValue() override;
 
-	nkf::ECharacterCode getCharacterCode();
+	QString suffixFilter() const;
 
-	bool containsIgnorePath( QString folderPath );
+	bool hasSuffix( QString filePath ) const;
+
+	nkf::ECharacterCode getCharacterCode() const;
+
+	bool containsIgnorePath( QString folderPath ) const;
 
 	void addIgnorePath( QString folderPath );
 
 signals:
-	void signal_changeIgnorePath();
+	void viewStateChange();
 };
 
 extern Config config;

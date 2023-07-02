@@ -2,6 +2,7 @@
 
 #include <QWidget>
 
+//////////////////////////////////////////////////////////////////////////////////
 class UIConfigIgnoreFolder : public QWidget {
 	Q_OBJECT
 
@@ -11,7 +12,6 @@ public:
 
 	/// @brief  イベントフィルター
 	bool eventFilter( QObject* obj, QEvent* event );
-
 
 private:
 	class Impl;

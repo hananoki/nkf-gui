@@ -6,72 +6,92 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>552</width>
-    <height>382</height>
+    <width>592</width>
+    <height>464</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>nkf-gui</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
     <property name="spacing">
      <number>0</number>
     </property>
     <property name="leftMargin">
-     <number>1</number>
+     <number>0</number>
     </property>
     <property name="topMargin">
-     <number>1</number>
+     <number>0</number>
     </property>
     <property name="rightMargin">
-     <number>1</number>
+     <number>0</number>
     </property>
     <property name="bottomMargin">
-     <number>1</number>
+     <number>0</number>
     </property>
     <item>
-     <widget class="UIMainCaption" name="caption" native="true">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
       </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>16777215</height>
-       </size>
+      <property name="leftMargin">
+       <number>4</number>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QWidget" name="widget" native="true">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
+      <property name="rightMargin">
+       <number>4</number>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
-      </layout>
-     </widget>
+      <item>
+       <widget class="QToolBar" name="toolBar">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="windowTitle">
+         <string>toolBar</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>14</width>
+          <height>14</height>
+         </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+        <addaction name="actionSettings"/>
+        <addaction name="actionInfo"/>
+       </widget>
+      </item>
+      <item>
+       <widget class="HTreeWidget" name="treeWidget">
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="indentation">
+         <number>16</number>
+        </property>
+        <property name="uniformRowHeights">
+         <bool>true</bool>
+        </property>
+        <column>
+         <property name="text">
+          <string>ファイル名</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>文字コード</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item>
+       <widget class="UICommandBar" name="commandBar" native="true"/>
+      </item>
+     </layout>
     </item>
     <item>
      <widget class="UIStatusBar" name="statusBar" native="true">
@@ -85,21 +105,49 @@
     </item>
    </layout>
   </widget>
+  <action name="actionSettings">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/res/icon/settings.png</normaloff>:/res/icon/settings.png</iconset>
+   </property>
+   <property name="text">
+    <string>設定</string>
+   </property>
+  </action>
+  <action name="actionInfo">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/res/icon/info2.png</normaloff>:/res/icon/info2.png</iconset>
+   </property>
+   <property name="text">
+    <string>情報</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>UIMainCaption</class>
-   <extends>QWidget</extends>
-   <header>UIMainCaption.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>UIStatusBar</class>
    <extends>QWidget</extends>
    <header>UIStatusBar.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>HTreeWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>HTreeWidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>UICommandBar</class>
+   <extends>QWidget</extends>
+   <header>UICommandBar.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
  <connections/>
 </ui>
