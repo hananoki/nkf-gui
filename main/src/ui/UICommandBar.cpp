@@ -19,12 +19,14 @@ public:
 		setupUi( self );
 
 		$ComboBox::addItems( comboBox, $enums::names<nkf::ECharacterCode>() );
+		$ComboBox::addItems( comboBox_2, $enums::names<nkf::ELineFeedCode>() );
 
 		comboBox->bind( &config.characterCode );
+		comboBox_2->bind( &config.lineFeedCode );
 
 		checkBox->bind( &config.ignoreFlag );
-
 		checkBox_2->bind( &config.ignoreAsciiFlag );
+		checkBox_BOM->bind( &config.BOM );
 	}
 
 
@@ -46,7 +48,7 @@ public:
 			emit self->buttonConvert();
 		} );
 
-
+#pragma region 変更があったら描画更新
 		connect( checkBox, &HCheckBox::stateChanged, [&]() {
 			emit self->viewStateChange();
 		} );
@@ -55,9 +57,15 @@ public:
 			emit self->viewStateChange();
 		} );
 
+		connect( checkBox_BOM, &HCheckBox::stateChanged, [&]() {
+			emit self->viewStateChange();
+		} );
+
+		// 文字コード選択ボックス
 		connect( comboBox, &HComboBox::currentTextChanged, [&]() {
 			emit self->viewStateChange();
 		} );
+#pragma endregion
 
 	}
 };

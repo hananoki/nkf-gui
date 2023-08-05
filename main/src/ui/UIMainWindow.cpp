@@ -243,13 +243,25 @@ public:
 
 
 	/////////////////////////////////////////
+
+	/**
+	 * @brief  変換を実行する
+	 */
 	void convert() {
 		int count = 0;
+		
+		/// 全てのアイテムに対して処理を行う
 		traverseItems( [&]( ItemFile* item ) {
 			if( item->checkState( 0 ) != Qt::Checked )return;
 
-			nkf::convertUTF8( item->fullPath );
+			nkf::convert(
+				item->fullPath,
+				config.getCharacterCode(),
+				config.getLineFeedCode(),
+				config.BOM );
+
 			item->updateItemState( true );
+			
 			count++;
 		} );
 

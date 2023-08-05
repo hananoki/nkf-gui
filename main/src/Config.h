@@ -12,12 +12,15 @@
 	CONFIG_VALUE( QSize, size ) \
 	CONFIG_VALUE( bool, ignoreFlag ) \
 	CONFIG_VALUE( bool, ignoreAsciiFlag ) \
+	CONFIG_VALUE( bool, BOM ) \
 	CONFIG_VALUE( int, lastConfigRow ) \
 	CONFIG_VALUE( QStringList, ignorePaths ) \
 	CONFIG_VALUE( QString, characterCode ) \
+	CONFIG_VALUE( QString, lineFeedCode ) \
 	CONFIG_VALUE( QString, fileTreeHeader ) \
 	CONFIG_VALUE( QStringList, suffixes ) \
 	CONFIG_VALUE( QStringList, lastInput )
+
 
 class Config : public QObject, public IConfigChanged {
 	Q_OBJECT
@@ -33,7 +36,14 @@ public:
 
 	bool hasSuffix( QString filePath ) const;
 
+	/**
+	 * @brief  文字コードを取得する
+	 * @return ECharacterCode
+	 */
 	nkf::ECharacterCode getCharacterCode() const;
+
+
+	nkf::ELineFeedCode getLineFeedCode() const;
 
 	bool containsIgnorePath( QString folderPath ) const;
 

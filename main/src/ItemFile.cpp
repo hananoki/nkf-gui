@@ -7,7 +7,7 @@ ItemFile::ItemFile( const QString& _fullPath ) :
 	setText( 0, path::getFileName( fullPath ) );
 	setIcon( 0, icon::get( fullPath ) );
 
-	setCheckState( 0, Qt::Unchecked );
+	setCheckState( 0, Qt::Checked );
 
 	updateItemState( true );
 }

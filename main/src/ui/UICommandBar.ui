@@ -76,13 +76,6 @@
     </widget>
    </item>
    <item>
-    <widget class="Line" name="line_3">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="HCheckBox" name="checkBox">
      <property name="text">
       <string>不要なファイルを除外する</string>
@@ -97,16 +90,19 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>文字コード</string>
+    <widget class="HComboBox" name="comboBox">
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="HComboBox" name="comboBox">
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
+    <widget class="HComboBox" name="comboBox_2"/>
+   </item>
+   <item>
+    <widget class="HCheckBox" name="checkBox_BOM">
+     <property name="text">
+      <string>BOM</string>
      </property>
     </widget>
    </item>

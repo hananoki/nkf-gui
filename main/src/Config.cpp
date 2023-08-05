@@ -68,6 +68,14 @@ nkf::ECharacterCode Config::getCharacterCode() const {
 	return e.value();
 }
 
+
+///////////////////////////////////////
+nkf::ELineFeedCode Config::getLineFeedCode() const {
+	auto e = magic_enum::enum_cast<nkf::ELineFeedCode>( config.lineFeedCode.toStdString() );
+	return e.value();
+}
+
+
 ///////////////////////////////////////
 bool Config::containsIgnorePath( QString folderPath ) const {
 	for( auto& f : config.ignorePaths ) {
